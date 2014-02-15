@@ -1,0 +1,81 @@
+includes = $(wildcard C:\SiLabs\MCU\INC\*.h)
+includes += compiler_defs.h
+includes += descriptor.h
+includes += init.h
+includes += main.h
+includes += report_handler.h
+includes += std_req.h
+includes += usb_defs.h
+includes += usb_isr.h
+
+as_includes = $(wildcard C:\SiLabs\MCU\INC\*.h)
+
+AS = a51.bat
+ASFLAGS = "XR GEN DB EP NOMOD51 INCDIR(C:\SiLabs\MCU\INC)"
+
+CC = c51.bat
+CFLAGS = "DB OE BR INCDIR(C:\SiLabs\MCU\INC)"
+
+LINK = bl51.bat
+LDFLAGS = "RS(256) PL(68) PW(78)"
+
+HEXGEN = oh51.EXE
+
+OPSYS = $(shell uname)
+ifeq ($(OPSYS),Linux)
+RM = rm -f
+NULL = /dev/null
+WINE_CMD = wine cmd /c
+WINE = wine
+else
+RM = del
+NULL = nul
+endif
+
+PROG = ire_hid
+PROG_UCASE = IRE_HID
+OBJS = descriptor.OBJ init.OBJ main.OBJ report_handler.OBJ std_req.OBJ usb_isr.OBJ 
+LIBS = 
+
+all: $(PROG).hex
+
+$(PROG).hex: $(PROG_UCASE)
+	$(WINE) "$(HEXGEN)" "$(PROG)"
+
+$(PROG_UCASE): $(OBJS) $(LIBS)
+	$(WINE_CMD) $(LINK) descriptor.obj,init.obj,main.obj,report_handler.obj,std_req.obj,usb_isr.obj TO $(PROG) $(LDFLAGS)
+
+descriptor.OBJ: descriptor.c $(includes)
+	$(WINE_CMD) $(CC) descriptor.c $(CFLAGS)
+
+init.OBJ: init.c $(includes)
+	$(WINE_CMD) $(CC) init.c $(CFLAGS)
+
+main.OBJ: main.c $(includes)
+	$(WINE_CMD) $(CC) main.c $(CFLAGS)
+
+report_handler.OBJ: report_handler.c $(includes)
+	$(WINE_CMD) $(CC) report_handler.c $(CFLAGS)
+
+std_req.OBJ: std_req.c $(includes)
+	$(WINE_CMD) $(CC) std_req.c $(CFLAGS)
+
+usb_isr.OBJ: usb_isr.c $(includes)
+	$(WINE_CMD) $(CC) usb_isr.c $(CFLAGS)
+
+download: $(PROG).hex
+ifneq ($(OPSYS),Linux)
+	$(WINE) "FlashUtilCL.exe" downloadusb -R "$(PROG).hex" "" 0 1
+else
+	ec2writeflash --port=USB --hex $(PROG).hex
+endif
+	@echo Download finished
+
+clean:
+	$(RM) $(PROG_UCASE) $(PROG_UCASE).M51 $(PROG).hex $(OBJS) cyglink.txt tmp.out 2> $(NULL)
+	$(RM) descriptor.a51 descriptor.asm descriptor.LST descriptor.m51 descriptor.__i descriptor.map descriptor.i descriptor.sbr descriptor.plg descriptor.sym descriptor.rel descriptor.rst descriptor.adb descriptor.mem descriptor.cdb descriptor.lnk descriptor.lk 2> $(NULL)
+	$(RM) init.a51 init.asm init.LST init.m51 init.__i init.map init.i init.sbr init.plg init.sym init.rel init.rst init.adb init.mem init.cdb init.lnk init.lk 2> $(NULL)
+	$(RM) main.a51 main.asm main.LST main.m51 main.__i main.map main.i main.sbr main.plg main.sym main.rel main.rst main.adb main.mem main.cdb main.lnk main.lk 2> $(NULL)
+	$(RM) report_handler.a51 report_handler.asm report_handler.LST report_handler.m51 report_handler.__i report_handler.map report_handler.i report_handler.sbr report_handler.plg report_handler.sym report_handler.rel report_handler.rst report_handler.adb report_handler.mem report_handler.cdb report_handler.lnk report_handler.lk 2> $(NULL)
+	$(RM) std_req.a51 std_req.asm std_req.LST std_req.m51 std_req.__i std_req.map std_req.i std_req.sbr std_req.plg std_req.sym std_req.rel std_req.rst std_req.adb std_req.mem std_req.cdb std_req.lnk std_req.lk 2> $(NULL)
+	$(RM) usb_isr.a51 usb_isr.asm usb_isr.LST usb_isr.m51 usb_isr.__i usb_isr.map usb_isr.i usb_isr.sbr usb_isr.plg usb_isr.sym usb_isr.rel usb_isr.rst usb_isr.adb usb_isr.mem usb_isr.cdb usb_isr.lnk usb_isr.lk 2> $(NULL)

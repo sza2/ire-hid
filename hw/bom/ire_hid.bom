@@ -1,0 +1,20 @@
+# $Id$
+# PcbBOM Version 1.0
+# Date: Mon 28 Oct 2013 08:11:56 PM GMT UTC
+# Author: 
+# Title: (unknown) - PCB BOM
+# Quantity, Description, Value, RefDes
+# --------------------------------------------
+2,"mh2450","unknown",H2 H1 
+6,"0402","10k",R142 R141 R132 R131 R143 R133 
+3,"0402","10n",C131 C133 C132 
+1,"0402","2k",R101 
+2,"0603","4.7u",C112 C122 
+2,"0402","100n",C121 C111 
+3,"tp50","unknown",GND C2D C2C 
+1,"JUMPER4","unknown",CN2 
+44,"Perforation hole","perf_hole",(unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) (unknown) 
+1,"sd67503010","unknown",CN1 
+1,"JUMPER6","unknown",CN3 
+1,"QFN28_5_EP","unknown",U1 
+1,"e27v","unknown",SW1 

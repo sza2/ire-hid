@@ -1,0 +1,41 @@
+includes = \
+	compiler_defs.h\
+	descriptor.h\
+	init.h\
+	main.h\
+	report_handler.h\
+	std_req.h\
+	usb_defs.h\
+	usb_isr.h
+
+CC = sdcc
+OPSYS = $(shell uname)
+ifeq ($(OPSYS),Linux)
+RM = rm -f
+NULL = /dev/null
+else
+RM = del
+NULL = nul
+endif
+
+PROG = ire_hid
+OBJS = descriptor.rel init.rel main.rel report_handler.rel std_req.rel usb_isr.rel
+
+all: $(PROG).hex
+
+$(PROG).hex: $(OBJS)
+	$(CC) -o $(PROG).hex descriptor.rel init.rel main.rel report_handler.rel std_req.rel usb_isr.rel
+
+%.rel: %.c $(includes)
+	$(CC) -c $(CFLAGS) $<
+
+download: $(PROG).hex
+ifneq ($(OPSYS),Linux)
+	$(WINE) "c:\silabs\mcu\Utilities\FLASH Programming\Static Programmers\Command-Line\FlashUtilCL.exe" downloadusb -R "C:\home\tszabo\Projects\ire_hid\fw\$(PROG).hex" "" 0 1
+else
+	ec2writeflash --port=USB --hex $(PROG).hex
+endif
+	@echo Download finished
+
+clean:
+	$(RM) $(PROG).hex $(PROG).lnk $(PROG).map $(PROG).mem $(OBJS) *.rel *.rst *.sym *.lst 2> $(NULL)

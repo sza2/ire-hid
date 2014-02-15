@@ -1,0 +1,16 @@
+Element["" "" "E27V" "" 0 0 0 0 0 100 ""]
+(
+	Pin[-7.500mm -2.500mm 1.800mm  0.600mm 1.900mm 1.000mm "A" "1" "square"]
+	Pin[-7.500mm  0.000mm 1.800mm  0.600mm 1.900mm 1.000mm "C" "2" ""]
+	Pin[-7.500mm  2.500mm 1.800mm  0.600mm 1.900mm 1.000mm "B" "3" ""]
+	Pin[ 7.000mm -2.500mm 1.800mm  0.600mm 1.900mm 1.000mm "S" "4" ""]
+	Pin[ 7.000mm  2.500mm 1.800mm  0.600mm 1.900mm 1.000mm "S" "5" ""]
+	Pin[ 0.000mm  4.650mm 2.600mm  0.000mm 0.000mm 2.600mm "6" "6" ""]
+	Pin[ 0.000mm -4.650mm 2.600mm  0.000mm 0.000mm 2.600mm "6" "6" ""]
+	Pad[-0.750mm  4.650mm 0.750mm  4.650mm 2.700mm 0.600mm 2.800mm "6" "6" "square,onsolder"]
+	Pad[-0.750mm -4.650mm 0.750mm -4.650mm 2.700mm 0.600mm 2.800mm "6" "6" "square,onsolder"]
+	ElementLine[-8.650mm -6.250mm  8.150mm -6.250mm 0.100mm]
+	ElementLine[-8.650mm  6.250mm  8.150mm  6.250mm 0.100mm]
+	ElementLine[-8.650mm -6.250mm -8.650mm  6.250mm 0.100mm]
+	ElementLine[ 8.150mm -6.250mm  8.150mm  6.250mm 0.100mm]
+)

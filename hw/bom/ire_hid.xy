@@ -1,0 +1,76 @@
+# $Id$
+# PcbXY Version 1.0
+# Date: Mon 28 Oct 2013 08:11:56 PM GMT UTC
+# Author: 
+# Title: (unknown) - PCB X-Y
+# RefDes, Description, Value, X, Y, rotation, top/bottom
+# X,Y in mm.  rotation in degrees.
+# --------------------------------------------
+H2,"mh2450","unknown",24.0000,5.25,0,top
+H1,"mh2450","unknown",24.0000,26.75,0,top
+R142,"0402","10k",29.7312,18.76,180,top
+R141,"0402","10k",29.6471,13.73,180,top
+C131,"0402","10n",29.6471,12.73,0,top
+C133,"0402","10n",18.7000,10.10,180,top
+C132,"0402","10n",29.7312,19.76,0,top
+R132,"0402","10k",29.7312,17.76,0,top
+R131,"0402","10k",29.6471,14.73,0,top
+R101,"0402","2k",20.0000,22.70,180,top
+C112,"0603","4.7u",15.7348,21.01,270,top
+C122,"0603","4.7u",15.7348,11.01,270,top
+C121,"0402","100n",16.9845,11.01,270,top
+GND,"tp50","unknown",31.8000,21.30,0,top
+C2D,"tp50","unknown",28.2001,21.30,0,top
+C2C,"tp50","unknown",29.9999,21.30,0,top
+C111,"0402","100n",16.9845,21.01,270,top
+R143,"0402","10k",15.8999,17.00,180,top
+CN2,"JUMPER4","unknown",13.9997,15.98,90,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,23.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,22.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,21.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,20.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,19.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,18.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,17.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,9.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,10.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,11.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,12.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,13.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,14.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,15.00,0,bottom
+(unknown),"Perforation hole","perf_hole",12.0000,16.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,10.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,23.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,22.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,21.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,20.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,19.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,18.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,17.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,9.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,11.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,12.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,13.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,14.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,15.00,0,bottom
+(unknown),"Perforation hole","perf_hole",34.1000,16.00,0,bottom
+CN1,"sd67503010","unknown",8.0384,16.00,180,bottom
+CN3,"JUMPER6","unknown",36.5999,15.95,90,bottom
+R133,"0402","10k",17.5999,17.00,180,top
+U1,"QFN28_5_EP","unknown",21.5999,16.10,0,top
+(unknown),"Perforation hole","perf_hole",23.9992,23.60,0,bottom
+(unknown),"Perforation hole","perf_hole",22.9995,23.60,0,bottom
+(unknown),"Perforation hole","perf_hole",21.9997,23.60,0,bottom
+(unknown),"Perforation hole","perf_hole",21.0000,23.60,0,bottom
+(unknown),"Perforation hole","perf_hole",24.9990,23.60,0,bottom
+(unknown),"Perforation hole","perf_hole",25.9987,23.60,0,bottom
+(unknown),"Perforation hole","perf_hole",26.9985,23.60,0,bottom
+(unknown),"Perforation hole","perf_hole",23.9992,8.50,0,bottom
+(unknown),"Perforation hole","perf_hole",22.9995,8.50,0,bottom
+(unknown),"Perforation hole","perf_hole",21.9997,8.50,0,bottom
+(unknown),"Perforation hole","perf_hole",21.0000,8.50,0,bottom
+(unknown),"Perforation hole","perf_hole",24.9990,8.50,0,bottom
+(unknown),"Perforation hole","perf_hole",25.9987,8.50,0,bottom
+(unknown),"Perforation hole","perf_hole",26.9985,8.50,0,bottom
+SW1,"e27v","unknown",24.9444,16.00,270,bottom
